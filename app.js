@@ -55,7 +55,7 @@ class Game extends React.Component {
 
 React.DOM.render(
 	<Game />
-	document.getElementById('container')
+	document.getElementById('container');
 );
 
 function calculateWinner(squares) {
