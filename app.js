@@ -4,13 +4,13 @@ class Square extends React.Component {
 			<button className="square">
 				{/* TO DO */}
 			<button>
-		)
+		);
 	}
 }
 
 class Board extends React.Component {
 	renderSquare(i) {
-		return <Square /> 
+		return <Square />;
 	}
 	render() {
 		const status = 'Next player: X';
@@ -53,7 +53,7 @@ class Game extends React.Component {
 	}
 }
 
-React.DOM.render(
+ReactDOM.render(
 	<Game />
 	document.getElementById('container');
 );
@@ -77,3 +77,5 @@ function calculateWinner(squares) {
 	}
 	return null;
 }
+
+
