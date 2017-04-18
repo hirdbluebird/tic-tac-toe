@@ -1,16 +1,22 @@
 class Square extends React.Component {
 	render() {
 		return (
-			<button className="square">
-				{/* TO DO */}
-			<button>
+			<button className="square" onClick={()=> this.setState({value: 'X'})}>
+				{this.state.value}
+			</button>
 		);
+	};
+	constructor() {
+		super();
+		this.state = {
+			value: null,
+		};
 	}
 }
 
 class Board extends React.Component {
 	renderSquare(i) {
-		return <Square />;
+		return <Square value={this.state.squares[i]} />;
 	}
 	render() {
 		const status = 'Next player: X';
@@ -35,6 +41,12 @@ class Board extends React.Component {
 			</div>
 		);
 	}
+	constructor() {
+		super();
+		this.state = {
+			squares: Array(9).fill(null),
+		}
+	}
 }
 
 class Game extends React.Component {
@@ -54,8 +66,8 @@ class Game extends React.Component {
 }
 
 ReactDOM.render(
-	<Game />
-	document.getElementById('container');
+	<Game />,
+	document.getElementById('container')
 );
 
 function calculateWinner(squares) {
